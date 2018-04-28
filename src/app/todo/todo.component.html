@@ -1,0 +1,32 @@
+<section class="todoapp">
+    <header class="header">
+      <br/>
+      <div class="pad card border-success mb-3" >
+      <h6 class="card-text text-success" >Enter Things You Need To-Do Below And Press Enter!</h6>
+    </div>
+      <input class="new-todo form-control card-body text-dark " placeholder="What needs to be done?"
+      autofocus="" [(ngModel)]="newTodo.title" (keyup.enter)="addTodo()">
+    </header>
+    <br/>
+    <section class="main card bg-dark " *ngIf="todos.length > 0">
+      <ul class="todo-list list-group list-group-flush  ">
+        <li class= " list-group-item card bg-light mb-4  " *ngFor="let todo of todos" [class.completed]="todo.complete">
+          <div class="view card-body ">
+            <div align="left" class="">
+            <input class="toggle checkmark"  type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.complete">
+            <p>Task Complete</p>
+            <label class="list-group-item" >{{todo.title}}</label>
+          </div>
+          <div class="card-title " >
+               <button class="destroy btn btn-secondary" (click)="removeTodo(todo)">Delete Post</button>
+          </div>
+        </div>
+        </li>
+      </ul>
+    </section>
+   <br/>
+    <footer class="footer navbar navbar-dark bg-dark" *ngIf="todos.length > 0">
+      <span class="todo-count navbar-brand "><strong>{{todos.length}}</strong> {{todos.length == 1 ? 'item' : 'items'}} left</span>
+    </footer>
+   </section>
+   

@@ -1,0 +1,12 @@
+/* Custom Fullstack SCSS*/
+.checkmark {
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+   }
+   
+   .pad{
+    padding-inline-start: 10px;
+   }
+   
